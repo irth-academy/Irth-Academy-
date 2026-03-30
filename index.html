@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية إرث | احترافية الحفظ والبيان</title>
+    <meta name="description" content="أكاديمية إرث لتعليم القرآن الكريم والتجويد بأحدث الوسائل التعليمية.">
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2942/2942933.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #064E3B;
+            --gold: #C5A021;
+            --gold-light: #e6cc80;
+            --white: #ffffff;
+            --cream: #fdfaf5; /* لون الخلفية الجديد */
+            --text-dark: #2d2d2d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--white);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--gold);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo-text {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        /* Hero Section - الهوية الجديدة */
+        .hero {
+            height: 95vh;
+            background-color: var(--cream);
+            background-image: url('https://www.transparenttextures.com/patterns/gray-floral.png'); /* زخرفة خفيفة جداً */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+            position: relative;
+            border-bottom: 1px solid var(--gold-light);
+        }
+
+        /* إضافة زخارف في الزوايا */
+        .hero::before, .hero::after {
+            content: "❁";
+            position: absolute;
+            font-size: 5rem;
+            color: var(--gold-light);
+            opacity: 0.3;
+        }
+        .hero::before { top: 40px; right: 40px; }
+        .hero::after { bottom: 40px; left: 40px; }
+
+        .hero h1 {
+            font-family: 'Amiri', serif;
+            font-size: 4.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            color: #555;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        /* زر التسجيل مع تأثير لمعان */
+        .btn-main {
+            background: linear-gradient(135deg, var(--gold), #b38f1d);
+            color: var(--white);
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(197, 160, 33, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(197, 160, 33, 0.6);
+            filter: brightness(1.1);
+        }
+
+        /* Services */
+        .section-title {
+            text-align: center;
+            font-family: 'Amiri', serif;
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin: 100px 0 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "⎯⎯⎯⎯ ✻ ⎯⎯⎯⎯";
+            display: block;
+            font-size: 1rem;
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 0 8%;
+            max-width: 1300px;
+            margin: 0 auto 100px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 50px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-family: 'Amiri', serif;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: linear-gradient(rgba(6, 78, 59, 0.95), rgba(6, 78, 59, 0.95)), 
+                        url('https://www.transparenttextures.com/patterns/arabesque.png');
+            color: white;
+            padding: 100px 10%;
+            text-align: center;
+            border-radius: 80px 80px 0 0;
+        }
+
+        .whatsapp-link {
+            color: #25D366;
+            font-size: 3rem;
+            display: inline-block;
+            margin: 30px 0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .whatsapp-link:hover { transform: scale(1.1); }
+
+        footer {
+            background: #032b21;
+            color: rgba(255,255,255,0.5);
+            padding: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.2rem; }
+            .section-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">أكاديمية إرث</div>
+    </header>
+
+    <section class="hero">
+        <h1 data-aos="fade-down">نورث أجيالنا أمانة القرآن</h1>
+        <p data-aos="fade-up">منصة تعليمية متخصصة تجمع بين أصالة المنهج وتقنيات التعلم الحديثة لخدمة كتاب الله.</p>
+        <div data-aos="zoom-in">
+            <a href="https://api.whatsapp.com/send?phone=201093176437&text=السلام%20عليكم،%20أرغب%20في%20التسجيل%20بأكاديمية%20إرث" 
+               target="_blank" 
+               class="btn-main">
+               سجل الآن مجاناً <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </section>
+
+    <h2 class="section-title" data-aos="fade-up">برامجنا المتخصصة</h2>
+    
+    <section class="services">
+        <div class="card" data-aos="fade-up">
+            <i class="fas fa-book-open"></i>
+            <h3>تحفيظ القرآن الكريم</h3>
+            <p>مناهج مخصصة لكل مرحلة عمرية مع متابعة يومية لضبط الحفظ وتثبيته.</p>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="150">
+            <i class="fas fa-microphone-alt"></i>
+            <h3>التجويد والأداء</h3>
+            <p>دراسة الأحكام النظرية مع التطبيق العملي لتلاوة القرآن كما أُنزل.</p>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-heart"></i>
+            <h3>تفسير وتدبر</h3>
+            <p>غرس قيم القرآن وفهم معانيه ليكون دستوراً للحياة ومنهاجاً للعمل.</p>
+        </div>
+    </section>
+
+    <section class="contact-box">
+        <h2 data-aos="zoom-in">ابدأ رحلتك المباركة معنا</h2>
+        <p style="opacity: 0.8; margin-top: 10px;">انضم إلينا الآن</p>
+        <a href="https://api.whatsapp.com/send?phone=201093176437" target="_blank" class="whatsapp-link">
+             01093176437 <i class="fab fa-whatsapp"></i>
+        </a>
+        <p>متاحون للرد على استفساراتكم على مدار الساعة</p>
+    </section>
+
+    <footer>
+        <p>© 2026 أكاديمية إرث للقرآن الكريم. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true, // الأنميشن يعمل مرة واحدة فقط عند النزول
+            offset: 120,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>
